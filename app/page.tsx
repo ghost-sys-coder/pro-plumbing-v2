@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Home as HomeIcon, Building2, AlertTriangle, Search, CheckCircle, Shield, Clock } from "lucide-react";
+import { ArrowRight, Home as HomeIcon, Building2, AlertTriangle, Search, CheckCircle, Shield, Clock, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ServiceCard } from "@/components/ui/service-card";
@@ -87,6 +87,16 @@ export default function HomePage() {
                   Emergency Service
                 </Button>
               </Link>
+              <a
+                href="https://wa.me/256750242627?text=Hi%20PlumbMaster%2C%20I%27d%20like%20to%20inquire%20about%20your%20plumbing%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-8 h-12 text-sm font-semibold w-full sm:w-auto transition-opacity hover:opacity-90"
+                style={{ backgroundColor: "#25D366", color: "#fff" }}
+              >
+                <MessageCircle className="h-4 w-4" />
+                WhatsApp Us
+              </a>
             </motion.div>
           </div>
         </div>

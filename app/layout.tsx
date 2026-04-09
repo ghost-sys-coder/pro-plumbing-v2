@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ThemeSwitcher } from "@/components/theme-switcher";
+import { WhatsAppFAB } from "@/components/ui/whatsapp-fab";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -53,6 +54,7 @@ export default function RootLayout({
           <main className="max-w-350 mx-auto overflow-hidden">{children}</main>
           <Footer />
           <ThemeSwitcher />
+          <WhatsAppFAB />
         </ThemeProvider>
       </body>
     </html>

@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock, Mail, Send, Check, ExternalLink } from "lucide-react";
-import { ContactMap } from "@/components/ui/contact-map";
+import { MapPin, Phone, Clock, Mail, Send, Check, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { fadeInLeft, fadeInRight, heroTextReveal } from "@/lib/animations";
+import MapSection from "./MapSection";
 
 const contactInfo = [
   { icon: MapPin, label: "Visit Us", value: "1200 Industrial Parkway, Suite 400\nMetropolis Central, MC 90210" },
@@ -170,6 +170,26 @@ export function ContactContent() {
                         </div>
                       </div>
                     ))}
+
+                    {/* WhatsApp */}
+                    <a
+                      href="https://wa.me/15551230000?text=Hi%20PlumbMaster%2C%20I%27d%20like%20to%20inquire%20about%20your%20plumbing%20services."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-start gap-3 group"
+                    >
+                      <div className="flex h-9 w-9 items-center justify-center rounded-lg shrink-0 transition-colors" style={{ backgroundColor: "#25D36620" }}>
+                        <MessageCircle className="h-4 w-4" style={{ color: "#25D366" }} />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">
+                          WhatsApp
+                        </p>
+                        <p className="text-sm font-medium group-hover:underline" style={{ color: "#25D366" }}>
+                          Chat with us instantly
+                        </p>
+                      </div>
+                    </a>
                   </div>
                 </div>
 
@@ -195,38 +215,7 @@ export function ContactContent() {
       </section>
 
       {/* ═══ MAP ═══ */}
-      <section className="section-padding bg-surface">
-        <div className="container-wide">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-            <div>
-              <h2 className="text-xl font-bold text-foreground">Find Us</h2>
-              <p className="text-sm text-muted-foreground mt-1 flex items-center gap-1.5">
-                <MapPin className="h-3.5 w-3.5 text-primary shrink-0" />
-                1200 Industrial Parkway, Suite 400 · Metropolis Central, MC 90210
-              </p>
-            </div>
-            <a
-              href="https://www.openstreetmap.org/?mlat=41.8781&mlon=-87.6298#map=15/41.8781/-87.6298"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline shrink-0"
-            >
-              Open in Maps
-              <ExternalLink className="h-3 w-3" />
-            </a>
-          </div>
-
-          {/* Map container — update lat/lng in ContactMap to match the real address */}
-          <div className="h-80 md:h-105 rounded-2xl overflow-hidden ghost-border">
-            <ContactMap
-              lat={41.8781}
-              lng={-87.6298}
-              zoom={15}
-              markerLabel="PlumbMaster HQ"
-            />
-          </div>
-        </div>
-      </section>
+      <MapSection />
     </>
   );
 }

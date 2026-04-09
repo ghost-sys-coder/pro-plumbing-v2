@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Droplets, Mail, Phone, MapPin } from "lucide-react";
+import { Droplets, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 
 const footerLinks = {
   expertise: [
@@ -60,6 +60,15 @@ export function Footer() {
                 <MapPin className="h-3.5 w-3.5 shrink-0" />
                 1200 Industrial Parkway, Suite 400
               </span>
+              <a
+                href="https://wa.me/15551230000?text=Hi%20PlumbMaster%2C%20I%27d%20like%20to%20inquire%20about%20your%20plumbing%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity"
+              >
+                <MessageCircle className="h-3.5 w-3.5 shrink-0" />
+                WhatsApp Us
+              </a>
             </div>
           </div>
 
