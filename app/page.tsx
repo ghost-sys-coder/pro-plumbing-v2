@@ -18,9 +18,19 @@ export default function HomePage() {
     <>
       {/* ═══ HERO SECTION ═══ */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-linear-to-br from-secondary via-secondary/95 to-secondary/80" />
-        <div className="absolute inset-0 grid-overlay opacity-[0.06]" />
+        {/* Background image */}
+        <Image
+          src="/assets/homepage-hero-image.jpg"
+          alt="PlumbMaster technician at work"
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
+        />
+        {/* Gradient overlay — left-heavy so text stays readable */}
+        <div className="absolute inset-0 bg-linear-to-r from-secondary/95 via-secondary/80 to-secondary/40" />
+        {/* Subtle grid texture */}
+        <div className="absolute inset-0 grid-overlay opacity-[0.04]" />
         {/* Decorative orbs */}
         <div className="absolute -top-40 -right-40 h-125 w-125 rounded-full bg-primary/10 blur-[120px]" />
         <div className="absolute -bottom-40 -left-20 h-100 w-100 rounded-full bg-tertiary/10 blur-[100px]" />
@@ -70,7 +80,7 @@ export default function HomePage() {
               animate="visible"
               variants={heroTextReveal}
               transition={{ delay: 0.3 }}
-              className="mt-8 flex flex-col sm:flex-row gap-4"
+              className="mt-8 flex flex-col sm:flex-row flex-wrap gap-4"
             >
               <Link href="/booking">
                 <Button className="gradient-cta rounded-full px-8 h-12 text-sm font-semibold border-0 gap-2 w-full sm:w-auto">
