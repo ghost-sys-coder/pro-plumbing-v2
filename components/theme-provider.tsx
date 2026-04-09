@@ -21,7 +21,7 @@ export const themes: { name: ThemeName; label: string; color: string }[] = [
 ];
 
 const defaultContext: ThemeContextType = {
-  theme: "atelier",
+  theme: "midnight",
   mode: "light",
   setTheme: () => {},
   setMode: () => {},
@@ -41,6 +41,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       const savedMode = localStorage.getItem("plumbmaster-mode") as ThemeMode | null;
       
       if (savedTheme && themes.some(t => t.name === savedTheme)) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setThemeState(savedTheme);
       }
       if (savedMode && (savedMode === "light" || savedMode === "dark")) {
